@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Book title</h1>
+  <dl class="list">
+    <dt>Author</dt>
+
+    <dt>Publish Year</dt>
+
+    <dt>Publisher</dt>
+    <dt>Update Date</dt>
+    <!--  <dd>{{ book.updated_date | date:'short' }}</dd>-->
+  </dl>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-primary" (click)="editBook()">EDIT</button>
+    <button class="btn btn-danger" type="button" (click)="deleteBook()">DELETE</button>
+  </div>
+</div>

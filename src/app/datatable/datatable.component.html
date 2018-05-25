@@ -1,0 +1,64 @@
+<!-- <div class=form-control>
+  
+<input
+type='text'
+style='padding:8px;margin:15px auto;width:30%;'
+placeholder='Type to filter the name column...'
+(keyup)='filterDatatable($event)'
+/>
+
+  <ngx-datatable  #table
+  class="material striped scroll-vertical" [rows]="rows" [columnMode]="'force'" [headerHeight]="50" 
+  [columns]="cols" [footerHeight]="50" [rowHeight]="'auto'"
+    [externalSorting]="true" (sort)="onSort($event)" [reorderable]="reorderable"
+     [selectionType]="'checkbox'" [selectAllRowsOnPage]="false">
+
+    <ngx-datatable-column name="Name" class="headerColor"></ngx-datatable-column>
+    <ngx-datatable-column name="Gender"></ngx-datatable-column>
+    <ngx-datatable-column name="Company"></ngx-datatable-column>
+    <ngx-datatable-column name="Age"></ngx-datatable-column>
+    <ngx-datatable-column name="profession"></ngx-datatable-column>
+  </ngx-datatable>
+  <p-button label="View" icon="fa fa-eye" iconPos="left" routerLink="/date"></p-button>
+  <p-button label="Edit" icon="fa fa-edit" iconPos="left" (click)="editUser()"></p-button>
+  <p-button label="Delete" icon="fa fa-trash" iconPos="left" (click)="deleteUser()"></p-button>
+  <div class="row dropdown">
+    <div class="col-sm-3">
+      <select class="form-control" name="custom-select" (change)="takeAction($event.target.value)" #action name="action" ngModel="action">
+        <option value="" selected="selected" disabled> Select Your Choice</option>
+        <option class="dropdown-item" value="1">Delete All</option>
+        <option class="dropdown-item" value="2">Enabled</option>
+        <option class="dropdown-item" value="3">Disabled</option>
+      </select>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <pagination [totalItems]="totalItems" [(ngModel)]="currentPage"></pagination> 
+  <p-paginator [rows]="10" [totalRecords]="100" pageLinkSize="10"></p-paginator>
+
+</div> -->
+
+<div class=form-control>
+    <input type="text" (keyup)='filterDatatable($event)'>
+
+<ngx-datatable
+ #table
+ class="material striped scroll-vertical"
+ [rows]="data"
+ [columns]="cols"
+ [columnMode]="'force'"
+ [headerHeight]="35"
+ [footerHeight]="35"
+ [rowHeight]="'auto'"
+ [limit]="pageSize"
+ [selectionType]="'single'">
+</ngx-datatable>
+    <input type="text" placeholder="Here I am"/>
+</div>
+
+
+
+
+<!-- <button (click)="clickMe()">submit</button> -->
