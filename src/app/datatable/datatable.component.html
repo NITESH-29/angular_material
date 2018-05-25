@@ -18,10 +18,18 @@ placeholder='Type to filter the name column...'
     <ngx-datatable-column name="Company"></ngx-datatable-column>
     <ngx-datatable-column name="Age"></ngx-datatable-column>
     <ngx-datatable-column name="profession"></ngx-datatable-column>
+
+ <ngx-datatable-column name="Action" [width]="65" [sortable]="false">
+      <ng-template let-row="row" ngx-datatable-cell-template>
+
+        <p-button icon="fa fa-trash" iconPos="left" (click)="deleteUser()"></p-button>
+        <p-button icon="fa fa-edit" iconPos="left" (click)="editUser()"></p-button>
+        <p-button icon="fa fa-eye" iconPos="left" routerLink="/date"></p-button>
+      </ng-template>
+    </ngx-datatable-column>
+
   </ngx-datatable>
-  <p-button label="View" icon="fa fa-eye" iconPos="left" routerLink="/date"></p-button>
-  <p-button label="Edit" icon="fa fa-edit" iconPos="left" (click)="editUser()"></p-button>
-  <p-button label="Delete" icon="fa fa-trash" iconPos="left" (click)="deleteUser()"></p-button>
+  
   <div class="row dropdown">
     <div class="col-sm-3">
       <select class="form-control" name="custom-select" (change)="takeAction($event.target.value)" #action name="action" ngModel="action">
